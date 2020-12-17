@@ -12,6 +12,10 @@
     <string name="menu_info">Info</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="icon_pendaftaran_pelayanan">Pendaftaran Pelayanan</string>
+    <string name="icon_histori_pendaftaran">Histori Pendaftaran</string>
+    <string name="descicon_pendaftaran_pelayanan">icon pendaftaran pelayanan</string>
+    <string name="descicon_histori_pendaftaran">icon histori pendaftaran</string>
 
 
 </resources>
