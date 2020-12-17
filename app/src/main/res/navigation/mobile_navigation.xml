@@ -7,24 +7,24 @@
 
     <fragment
         android:id="@+id/nav_beranda"
-        android:name="com.example.pelayananonlinesumedang.ui.home.HomeFragment"
+        android:name="com.example.pelayananonlinesumedang.ui.Beranda.BerandaFragment"
         android:label="@string/menu_beranda"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_beranda" />
 
     <fragment
         android:id="@+id/nav_pendaftaran_layanan"
-        android:name="com.example.pelayananonlinesumedang.ui.gallery.GalleryFragment"
+        android:name="com.example.pelayananonlinesumedang.ui.Pendaftaran.PendaftaranFragment"
         android:label="@string/menu_pendaftaran_layanan"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_pendaftaran" />
 
     <fragment
         android:id="@+id/nav_history_pendaftaran"
-        android:name="com.example.pelayananonlinesumedang.ui.slideshow.SlideshowFragment"
+        android:name="com.example.pelayananonlinesumedang.ui.History.HistoryFragment"
         android:label="@string/menu_history_pendaftaran"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_history" />
     <fragment
         android:id="@+id/nav_info"
-        android:name="com.example.pelayananonlinesumedang.fragment_info"
+        android:name="com.example.pelayananonlinesumedang.ui.Info.InfoFragment"
         android:label="@string/menu_info"
         tools:layout="@layout/fragment_info"/>
 </navigation>
