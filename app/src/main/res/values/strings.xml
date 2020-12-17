@@ -12,6 +12,12 @@
     <string name="menu_info">Info</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="form_nama_lengkap">Nama Lengkap</string>
+    <string name="form_nik">NIK KTP</string>
+    <string name="form_pilih_pelayanan">Pilih Pelayanan</string>
+    <string name="form_tanggal_booking">Tanggal Booking</string>
+    <string name="button_daftar_pelayanan">Daftar Pelayanan</string>
+    <string name="form_pendaftaran_layanan">Pendaftaran Layanan</string>
 
 
 </resources>
