@@ -4,80 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_main"
-    android:orientation="vertical">
+    tools:showIn="@layout/app_bar_main">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_pendaftaran_pelayanan"
-        android:layout_gravity="center"
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="270dp"
-        app:cardCornerRadius="4dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:background="#bce6eb"
-            android:layout_marginBottom="5dp">
-
-            <ImageView
-                android:id="@+id/imageView_pendaftaran_pelayanan"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/descicon_pendaftaran_pelayanan"
-                app:srcCompat="@drawable/icon_pendaftaran" />
-
-            <TextView
-                android:id="@+id/text_pendaftaran_pelayanan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/acme"
-                android:gravity="center"
-                android:text="@string/icon_pendaftaran_pelayanan"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_histori_pelayanan"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="270dp"
-        android:layout_marginTop="5dp"
-        app:cardCornerRadius="4dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:background="#e6e6e6">
-
-            <ImageView
-                android:id="@+id/imageView_histori_pendaftaran"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/descicon_histori_pendaftaran"
-                app:srcCompat="@drawable/icon_history" />
-
-            <TextView
-                android:id="@+id/text_histori_pendaftaran"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/acme"
-                android:gravity="center"
-                android:text="@string/icon_histori_pendaftaran"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+        android:layout_height="match_parent"
+        app:navGraph="@navigation/mobile_navigation" />
 </LinearLayout>
