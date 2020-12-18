@@ -16,6 +16,22 @@
     <string name="icon_histori_pendaftaran">Histori Pendaftaran</string>
     <string name="descicon_pendaftaran_pelayanan">icon pendaftaran pelayanan</string>
     <string name="descicon_histori_pendaftaran">icon histori pendaftaran</string>
+    <string name="form_nama_lengkap">Nama Lengkap</string>
+    <string name="form_nik_ktp">NIK KTP</string>
+    <string name="form_pilih_pelayanan">Pilih Pelayanan</string>
+    <string name="form_tanggal_booking">Tanggal Booking</string>
+    <string name="button_daftar_pelayanan">Daftar Pelayanan</string>
+    <string name="hint_form_tanggalbooking">DD/MM/YYYY</string>
+    <string name="form_registrasi_title">Form Registrasi</string>
+
+    <string-array name="list_pilihan_pelayanan">
+        <item>Pelayanan E-KTP</item>
+        <item>Pelayanan KK baru/Perubahan KK</item>
+        <item>Pelayanan Akta Kelahiran</item>
+        <item>Pelayanan Akta Cerai</item>
+        <item>Pelayanan Akta Kematian</item>
+        <item>Pelayanan Pindah Warga antar Daerah</item>
+    </string-array>
 
 
 </resources>
