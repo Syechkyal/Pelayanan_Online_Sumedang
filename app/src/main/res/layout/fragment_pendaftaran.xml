@@ -29,6 +29,7 @@
         />
 
     <EditText
+        android:id="@+id/edt_nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -46,6 +47,7 @@
         />
 
     <EditText
+        android:id="@+id/edt_nik"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -82,7 +84,7 @@
         />
 
     <EditText
-        android:id="@+id/tv_tanggalbooking"
+        android:id="@+id/edt_tanggal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
