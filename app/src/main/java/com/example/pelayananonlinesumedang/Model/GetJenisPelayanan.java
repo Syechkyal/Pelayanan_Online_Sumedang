@@ -36,13 +36,13 @@ public class GetJenisPelayanan {
     public void setListJenisPelayanan(List<ItemJenisLayanan> listJenisPelayanan){
         this.listJenisPelayanan = listJenisPelayanan;
     }
+
     @Override
-    public String toString(){
-        return
-                "jenis_pelayanan{" +
-                        "code = '" + code + '\'' +
-                        ",message = '" + message + '\'' +
-                        ",response = '" + listJenisPelayanan + '\'' +
-                        "}";
+    public String toString() {
+        return "GetJenisPelayanan{" +
+                "code='" + code + '\'' +
+                ", listJenisPelayanan=" + listJenisPelayanan +
+                ", message='" + message + '\'' +
+                '}';
     }
 }

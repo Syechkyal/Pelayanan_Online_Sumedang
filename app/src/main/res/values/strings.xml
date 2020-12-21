@@ -23,6 +23,7 @@
     <string name="button_daftar_pelayanan">Daftar Pelayanan</string>
     <string name="hint_form_tanggalbooking">DD/MM/YYYY</string>
     <string name="form_registrasi_title">Form Registrasi</string>
+    <string name="cari_data">Cari Data</string>
 
     <string-array name="list_pilihan_pelayanan">
         <item>Pelayanan E-KTP</item>

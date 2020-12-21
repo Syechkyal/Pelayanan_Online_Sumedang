@@ -2,6 +2,7 @@ package com.example.pelayananonlinesumedang.ui.Pendaftaran;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import com.example.pelayananonlinesumedang.Model.GetJenisPelayanan;
 import com.example.pelayananonlinesumedang.Model.ItemJenisLayanan;
 import com.example.pelayananonlinesumedang.R;
+import com.example.pelayananonlinesumedang.Rest.ApiClient;
 import com.example.pelayananonlinesumedang.Rest.ApiInterface;
 import com.example.pelayananonlinesumedang.Rest.UtilsApi;
 
@@ -31,7 +33,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class PendaftaranFragment extends Fragment {
-    @BindView(R.id.list_form_pelayanan)
     Spinner spinner;
     Context context;
     ApiInterface apiInterface;
@@ -42,15 +43,33 @@ public class PendaftaranFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_pendaftaran, container, false);
-        ButterKnife.bind(getActivity());
-        context = getActivity();
-        apiInterface = UtilsApi.getAPIService();
+
+
+
         edt_nama = root.findViewById(R.id.edt_nama);
         edt_nik = root.findViewById(R.id.edt_nik);
         tgl_booking = root.findViewById(R.id.edt_tanggal);
-
         btn_daftar = root.findViewById(R.id.button_submit);
+        spinner = root.findViewById(R.id.list_form_pelayanan);
+        ButterKnife.bind(getActivity());
+        context = getActivity();
+        apiInterface = UtilsApi.getAPIService();
+        apiInterface = ApiClient.getClient(UtilsApi.BASE_URL_API).create(ApiInterface.class);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String selectedName = adapterView.getItemAtPosition(i).toString();
+//                requestDetailDosen(selectedName);
+                Toast.makeText(getActivity(), "Kamu memilih Pelayanan " + selectedName, Toast.LENGTH_SHORT).show();
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        initSpinnerJenisLayanan();
         btn_daftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,18 +80,18 @@ public class PendaftaranFragment extends Fragment {
                 }if (tgl_booking.getText().toString().length() == 0){
                     tgl_booking.setError("Masukan Tanggal Dengan Benar");
                 }else{
-                    Toast.makeText(getActivity(), "Registrasi Berhasil!",
-                            Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(getActivity(), "Registrasi Berhasil!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        initSpinnerJenisLayanan();
+
         getActivity().setTitle("Pendaftaran Layanan");
         return root;
     }
     void initSpinnerJenisLayanan(){
-        apiInterface.getJenisPelayanan().enqueue(new Callback<GetJenisPelayanan>() {
+        apiInterface.getJenisPelayanan("Basic bW9iaWxlOjFudDNuNS4yMDIw").enqueue(new Callback<GetJenisPelayanan>() {
             @Override
             public void onResponse(Call<GetJenisPelayanan> call, Response<GetJenisPelayanan> response) {
                 if (response.isSuccessful()) {
@@ -92,7 +111,7 @@ public class PendaftaranFragment extends Fragment {
             }
 
             public void onFailure(Call<GetJenisPelayanan> call, Throwable t) {
-
+                Log.e("Fail",t.getLocalizedMessage());
             }
         });
     }

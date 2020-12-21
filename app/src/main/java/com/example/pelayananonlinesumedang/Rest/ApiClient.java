@@ -5,8 +5,11 @@ import androidx.constraintlayout.solver.widgets.Chain;
 import com.example.pelayananonlinesumedang.Model.GetJenisPelayanan;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 
+import okhttp3.Headers;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -18,18 +21,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    String token = "W9iaWxlOjFudDNuNS4yMDIw";
-    OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
-        @Override
-        public Response intercept(Chain chain) throws IOException {
-            Request newRequest  = chain.request().newBuilder()
-                    .addHeader("Authorization", "Basic " + token)
-                    .build();
-            return chain.proceed(newRequest);
-        }
-    }).build();
+
+    public static String authToken = "W9iaWxlOjFudDNuNS4yMDIw";
     private static Retrofit retrofit = null;
     public static Retrofit getClient(String BASE_URL){
+
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
@@ -41,6 +37,10 @@ public class ApiClient {
                     .build();
         }
         return retrofit;
+    }
+    public static ApiInterface getDataService(String BASEURL){
+        ApiInterface apiInterface = getClient(BASEURL).create(ApiInterface.class);
+        return apiInterface;
     }
 }
 

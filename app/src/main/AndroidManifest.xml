@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PelayananOnlineSumedang">
-        <activity android:name=".Detail.reportPendaftaran"></activity>
+        <activity android:name=".ListHistory.ListHistory"></activity>
+        <activity android:name=".Detail.DetailHistory" />
+        <activity android:name=".Detail.reportPendaftaran" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

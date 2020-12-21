@@ -1,4 +1,35 @@
 package com.example.pelayananonlinesumedang.Adapter;
 
-public class ListViewAdapterHistory {
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class ListViewAdapterHistory extends RecyclerView.Adapter<ListViewAdapterHistory.ListViewHolder> {
+
+
+
+    @NonNull
+    @Override
+    public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return null;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
+
+    public class ListViewHolder extends RecyclerView.ViewHolder {
+        public ListViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+        }
+    }
 }
